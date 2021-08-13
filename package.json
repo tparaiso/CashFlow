@@ -34,7 +34,8 @@
     },
     "repository": "Thomas Paraiso/cashflow",
     "scripts": {
-        "build": "lwc-services build -m production",
+        "build:oasis": "node scripts/copy-oasis.js",
+        "build": "yarn build:oasis && lwc-services build -m production",
         "build:development": "lwc-services build",
         "lint": "eslint ./src/**/*.js",
         "postinstall": "husky install",
